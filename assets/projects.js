@@ -25,5 +25,13 @@ window.PROJECTS = [
     description: 'Bulk school ID cards from an Excel sheet. Auto-match student photos by roll number, pick from 8 templates, add the principal\'s signature and export print-ready 300 DPI A4 sheets — all in your browser.',
     tags: ['ID cards', 'Schools', 'Free', 'No upload'],
     date: 'Nov 2026'
+  },
+  {
+    title: 'HireReady – AI Resume Builder',
+    url: 'https://nishtek.in/hireready/',
+    image: 'assets/projects/hireready.png',
+    description: 'AI-powered ATS resume builder. Write your resume with AI, paste any job description to get a match score and a tailored version, check ATS compatibility, and generate cover letters and LinkedIn summaries. AI never invents experience — download PDF/DOCX free.',
+    tags: ['✨ AI-powered', 'Resume builder', 'ATS checker', 'Free', 'No watermark'],
+    date: 'Nov 2026'
   }
 ];
