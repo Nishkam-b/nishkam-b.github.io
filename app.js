@@ -199,24 +199,80 @@
     if (added) render();
   }).catch(() => {});
 
-  /* ---------- Vibe coded projects ---------- */
+  /* ---------- Vibe coded: Nishkam's AI tool library ---------- */
   const projects = window.PROJECTS || [];
   if (!projects.length) $('projects').hidden = true;
-  $('projectList').innerHTML = projects.map((p, i) => {
-    const num = String(i + 1).padStart(2, '0');
-    // All tools share one even 3x3-style grid (3 per row on desktop, 2 on tablet, 1 on phone).
-    const wide = false;
-    return `<a class="project${wide ? ' is-featured' : ''}" href="${esc(safeUrl(p.url))}" target="_blank" rel="noopener">
-      <div class="project-shot"><img src="${esc(p.image)}" alt="Screenshot of ${esc(p.title)}" loading="lazy" /></div>
-      <div class="project-body">
-        <div class="project-meta"><span class="reel">#${num}</span>${p.date ? `<span>${esc(p.date)}</span>` : ''}</div>
-        <h3>${esc(p.title)}</h3>
-        <p>${esc(p.description)}</p>
-        <ul class="tags">${(p.tags || []).map((t) => `<li>${esc(t)}</li>`).join('')}</ul>
-        <span class="btn btn-primary project-cta">Open tool ↗</span>
+  const ICONS = {
+    pdf: '<path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/>',
+    photo: '<circle cx="12" cy="9" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/>',
+    idcard: '<rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M6 16c.6-1.4 1.7-2 3-2s2.4.6 3 2M14 10h4M14 13h3"/>',
+    resume: '<path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/>',
+    spark: '<path d="M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8z"/>',
+  };
+  const CAT_ICONS = {
+    'All Tools': '<rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/>',
+    Productivity: '<path d="M12 3 3 8l9 5 9-5z"/><path d="m3 13 9 5 9-5"/>',
+    Education: '<path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c3 2 9 2 12 0v-5"/>',
+    Design: '<path d="M12 3a9 9 0 1 0 0 18c1.1 0 1.5-.8 1.2-1.6-.4-1 .2-2.4 1.6-2.4H17a4 4 0 0 0 4-4c0-5.5-4-10-9-10z"/><circle cx="7.5" cy="11" r="1"/><circle cx="10" cy="7" r="1"/><circle cx="15" cy="7.5" r="1"/>',
+    Careers: '<rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M3 13h18"/>',
+    Creators: '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m10 9 5 3-5 3z"/>',
+    Utilities: '<path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.4-.6-.6-2.4z"/>',
+  };
+  const svg = (p) => `<svg viewBox="0 0 24 24" aria-hidden="true">${p}</svg>`;
+  const ORDER = ['Productivity', 'Education', 'Design', 'Careers', 'Creators', 'Utilities'];
+  const cats = ['All Tools', ...ORDER.filter((c) => projects.some((p) => (p.categories || []).includes(c)))];
+  const lab = { cat: 'All Tools', q: '' };
+  const toolName = (p) => p.name || p.title;
+
+  $('labCount').textContent = projects.length;
+  const feat = projects.find((p) => p.featured) || projects[0];
+  if (feat) {
+    $('labShot').src = feat.image;
+    $('labShot').alt = 'Screenshot of ' + toolName(feat);
+    $('labDevice').href = safeUrl(feat.url);
+    $('labDevice').target = '_blank';
+    $('labDevice').rel = 'noopener';
+    $('labDevice').setAttribute('aria-label', 'Open ' + toolName(feat) + ' (featured tool)');
+  }
+
+  $('labCats').innerHTML = cats.map((c) =>
+    `<button type="button" data-cat="${esc(c)}" aria-pressed="${c === lab.cat}">${svg(CAT_ICONS[c] || CAT_ICONS.Utilities)}${esc(c)}</button>`).join('');
+
+  const toolCard = (p) => {
+    const url = esc(safeUrl(p.url));
+    const color = /^#[0-9a-f]{3,8}$/i.test(p.color || '') ? p.color : '#7c3aed';
+    return `<article class="tool">
+      <a class="tool-shot" href="${url}" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+        <img src="${esc(p.image)}" alt="" loading="lazy" />${p.featured ? '<span class="tool-feat">Featured</span>' : ''}
+      </a>
+      <div class="tool-head">
+        <span class="tool-icon" style="--c:${color}">${svg(ICONS[p.icon] || ICONS.spark)}</span>
+        <h3>${esc(toolName(p))}</h3>
+        <span class="tool-free">Free</span>
       </div>
-    </a>`;
-  }).join('');
+      <p>${esc(p.description)}</p>
+      <ul class="tool-chips">${(p.chips || p.tags || []).slice(0, 3).map((t) => `<li>${esc(t)}</li>`).join('')}</ul>
+      <a class="tool-cta" href="${url}" target="_blank" rel="noopener">Open Tool <span aria-hidden="true">↗</span><span class="sr-only"> ${esc(toolName(p))} (opens in a new tab)</span></a>
+    </article>`;
+  };
+
+  const renderLab = () => {
+    const q = lab.q.trim().toLowerCase();
+    const list = projects.filter((p) =>
+      (lab.cat === 'All Tools' || (p.categories || []).includes(lab.cat)) &&
+      (!q || [p.name, p.title, p.description, ...(p.chips || []), ...(p.tags || []), ...(p.categories || [])].join(' ').toLowerCase().includes(q)));
+    $('projectList').innerHTML = list.map(toolCard).join('');
+    $('labEmpty').hidden = list.length > 0;
+  };
+  $('labCats').addEventListener('click', (e) => {
+    const b = e.target.closest('[data-cat]');
+    if (!b) return;
+    lab.cat = b.dataset.cat;
+    $('labCats').querySelectorAll('button').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+    renderLab();
+  });
+  $('labSearch').addEventListener('input', (e) => { lab.q = e.target.value; renderLab(); });
+  renderLab();
 
   $('year').textContent = new Date().getFullYear();
   render();

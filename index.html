@@ -32,7 +32,7 @@
   <script>
     try { var t = localStorage.getItem('nb_theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
   </script>
-  <link rel="stylesheet" href="styles.css?v=20261123a" />
+  <link rel="stylesheet" href="styles.css?v=20261123b" />
 </head>
 <body>
   <a class="skip" href="#vault">Skip to the vault</a>
@@ -80,14 +80,38 @@
       </figure>
     </section>
 
-    <!-- Vibe coded projects -->
-    <section id="projects" class="projects wrap" aria-labelledby="projectsTitle">
-      <div class="section-head">
-        <p class="eyebrow">New series</p>
-        <h2 id="projectsTitle">Vibe coded</h2>
-        <p>Tools I built with AI — free to use, right in your browser.</p>
+    <!-- Vibe coded projects: Nishkam's AI tool library -->
+    <section id="projects" class="lab" aria-labelledby="projectsTitle">
+      <div class="wrap">
+        <div class="lab-hero">
+          <div class="lab-intro">
+            <p class="lab-badge"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg>Nishkam's AI Tool Library</p>
+            <h2 id="projectsTitle">Things I've Built <span class="lab-hl">With AI.<svg viewBox="0 0 200 14" preserveAspectRatio="none" aria-hidden="true"><path d="M3 10c40-6 90-8 194-4"/></svg></span></h2>
+            <p class="lab-lead">Free, practical tools built to solve everyday problems. <br>No unnecessary subscriptions.</p>
+            <ul class="lab-stats">
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l9 5v10l-9 5-9-5V7z"/><path d="M3 7l9 5 9-5M12 12v10"/></svg><span><b><span id="labCount">0</span> Tools</b><small>Launched</small></span></li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg><span><b>100% Free</b><small>Use in your browser</small></span></li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6l-6 6 6 6M16 6l6 6-6 6M14 4l-4 16"/></svg><span><b>Built with AI</b><small>Vibe coded</small></span></li>
+            </ul>
+          </div>
+          <a class="lab-device" id="labDevice" href="#projectList" aria-label="Featured tool">
+            <span class="lab-spark" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span class="laptop"><span class="laptop-screen"><img id="labShot" alt="" /></span><span class="laptop-base"></span></span>
+          </a>
+        </div>
+
+        <div class="lab-controls">
+          <label class="lab-search">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+            <span class="sr-only">Search my tools</span>
+            <input id="labSearch" type="search" placeholder="Search tools… what do you need?" autocomplete="off" />
+          </label>
+          <div id="labCats" class="lab-cats" role="group" aria-label="Filter tools by category"></div>
+        </div>
+
+        <div id="projectList" class="lab-grid"></div>
+        <p id="labEmpty" class="lab-empty" hidden>No tool for that yet — <a href="#work">tell me what to build next</a>.</p>
       </div>
-      <div id="projectList" class="project-list"></div>
     </section>
 
     <!-- Vault -->
@@ -194,8 +218,8 @@
 
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
-  <script src="assets/vault.js?v=20261123a"></script>
-  <script src="assets/projects.js?v=20261123a"></script>
-  <script src="app.js?v=20261123a"></script>
+  <script src="assets/vault.js?v=20261123b"></script>
+  <script src="assets/projects.js?v=20261123b"></script>
+  <script src="app.js?v=20261123b"></script>
 </body>
 </html>
