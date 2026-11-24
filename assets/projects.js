@@ -2,7 +2,7 @@
 // To add a new one: copy a block below, paste it at the BOTTOM of the list,
 // and drop its screenshot in assets/projects/.
 //   name        short name on the card
-//   icon        one of: pdf, photo, idcard, resume, spark (the little app icon)
+//   icon        one of: pdf, photo, idcard, resume, captions, spark (the little app icon)
 //   color       app icon colour
 //   categories  any of: Productivity, Education, Design, Careers, Creators, Utilities
 //   chips       2-3 short tags shown on the card
@@ -55,6 +55,18 @@ window.PROJECTS = [
     categories: ['Careers', 'Productivity'],
     description: 'Build an ATS-friendly resume with AI. Match it to any job, write cover letters and download PDF/DOCX free.',
     chips: ['ATS Friendly', 'Job Match', 'AI Assist'],
+    date: 'Nov 2026'
+  },
+  {
+    title: 'Matra Boli – Captions in every Indian language',
+    name: 'Matra Boli',
+    url: 'https://nishtek.in/matra-boli/',
+    image: 'assets/projects/matra-boli.webp',
+    icon: 'captions',
+    color: '#16a34a',
+    categories: ['Creators', 'Productivity'],
+    description: 'Add animated, Reels-style captions to your videos in Hindi, Hinglish and 12 more Indian languages. Runs in your browser — your video never leaves your device.',
+    chips: ['Hindi + Hinglish', 'Animated Captions', 'No Upload'],
     date: 'Nov 2026'
   }
 ];
