@@ -2,7 +2,7 @@
 // To add a new one: copy a block below, paste it at the BOTTOM of the list,
 // and drop its screenshot in assets/projects/.
 //   name        short name on the card
-//   icon        one of: pdf, photo, idcard, resume, captions, spark (the little app icon)
+//   icon        one of: pdf, photo, idcard, resume, captions, clips, spark (the little app icon)
 //   color       app icon colour
 //   categories  any of: Productivity, Education, Design, Careers, Creators, Utilities
 //   chips       2-3 short tags shown on the card
@@ -67,6 +67,18 @@ window.PROJECTS = [
     categories: ['Creators', 'Productivity'],
     description: 'Add animated, Reels-style captions to your videos in Hindi, Hinglish and 12 more Indian languages. Runs in your browser — your video never leaves your device.',
     chips: ['Hindi + Hinglish', 'Animated Captions', 'No Upload'],
+    date: 'Nov 2026'
+  },
+  {
+    title: 'ClipMitra AI – Turn long videos into viral clips',
+    name: 'ClipMitra AI',
+    url: 'https://nishtek.in/clipmitra/',
+    image: 'assets/projects/clipmitra.webp',
+    icon: 'clips',
+    color: '#7c3aed',
+    categories: ['Creators', 'Productivity'],
+    description: 'Turn podcasts and long videos (up to 30 min) into vertical Reels and Shorts. AI picks the best moments, follows the speaker and adds Hinglish captions — all on your own PC.',
+    chips: ['AI Clips', 'Auto Reframe 9:16', 'Runs on Your PC'],
     date: 'Nov 2026'
   }
 ];
