@@ -1,0 +1,4 @@
+:HL["/clipmitra/_next/static/chunks/14_23_60vvzn8.css","style"]
+2:[["children",{"s":"__PAGE__","h":160}]]
+1:[["children",{"s":"/_not-found","h":96,"c":"$Q2"}]]
+0:{"b":"7W24vT7rGddcI-Ckf-Mru","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
