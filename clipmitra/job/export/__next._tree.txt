@@ -1,6 +1,6 @@
-:HL["/clipmitra/_next/static/chunks/2win-es25bbxi.css","style"]
+:HL["/clipmitra/_next/static/chunks/1w3kqnwocrmtd.css","style"]
 :HL["/clipmitra/_next/static/media/d8aeca813a9ab546-s.p.18rizl4rsrl42.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 3:[["children",{"s":"__PAGE__","h":160}]]
 2:[["children",{"s":"export","h":96,"c":"$Q3"}]]
 1:[["children",{"s":"job","h":96,"c":"$Q2"}]]
-0:{"b":"li7pcw0x9fFNGJ7kYlLNT","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
+0:{"b":"tGqZZiLZcoysg9K-tbZL1","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
