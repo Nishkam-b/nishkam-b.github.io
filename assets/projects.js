@@ -2,7 +2,7 @@
 // To add a new one: copy a block below, paste it at the BOTTOM of the list,
 // and drop its screenshot in assets/projects/.
 //   name        short name on the card
-//   icon        one of: pdf, photo, idcard, resume, captions, clips, spark (the little app icon)
+//   icon        one of: pdf, photo, idcard, resume, captions, clips, fonts, spark (the little app icon)
 //   color       app icon colour
 //   categories  any of: Productivity, Education, Design, Careers, Creators, Utilities
 //   chips       2-3 short tags shown on the card
@@ -79,6 +79,18 @@ window.PROJECTS = [
     categories: ['Creators', 'Productivity'],
     description: 'Turn podcasts and long videos (up to 30 min) into vertical Reels and Shorts. AI picks the best moments, follows the speaker and adds Hinglish captions — all on your own PC.',
     chips: ['AI Clips', 'Auto Reframe 9:16', 'Runs on Your PC'],
+    date: 'Nov 2026'
+  },
+  {
+    title: 'FontPair Studio – Find and design with perfect font pairs',
+    name: 'FontPair Studio',
+    url: 'https://nishtek.in/fontpair/',
+    image: 'assets/projects/fontpair.webp',
+    icon: 'fonts',
+    color: '#1f7a4d',
+    categories: ['Design', 'Creators'],
+    description: 'Explore Google Fonts, build font pairings and design typographic posters and social posts. Export as PNG, SVG, PDF or ready-to-use CSS.',
+    chips: ['Font Pairing', 'Typography Design', 'PNG/SVG/PDF Export'],
     date: 'Nov 2026'
   }
 ];
