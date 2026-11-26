@@ -2,7 +2,7 @@
 // To add a new one: copy a block below, paste it at the BOTTOM of the list,
 // and drop its screenshot in assets/projects/.
 //   name        short name on the card
-//   icon        one of: pdf, photo, idcard, resume, captions, clips, fonts, spark (the little app icon)
+//   icon        one of: pdf, photo, idcard, resume, captions, clips, fonts, record, spark (the little app icon)
 //   color       app icon colour
 //   categories  any of: Productivity, Education, Design, Careers, Creators, Utilities
 //   chips       2-3 short tags shown on the card
@@ -91,6 +91,18 @@ window.PROJECTS = [
     categories: ['Design', 'Creators'],
     description: 'Explore Google Fonts, build font pairings and design typographic posters and social posts. Export as PNG, SVG, PDF or ready-to-use CSS.',
     chips: ['Font Pairing', 'Typography Design', 'PNG/SVG/PDF Export'],
+    date: 'Nov 2026'
+  },
+  {
+    title: 'CaptureKit – Free screen recorder & video editor',
+    name: 'CaptureKit',
+    url: 'https://nishtek.in/capturekit/',
+    image: 'assets/projects/capturekit.webp',
+    icon: 'record',
+    color: '#10b981',
+    categories: ['Creators', 'Productivity'],
+    description: 'Record your screen with webcam and mic, then trim, zoom, switch between screen and webcam, annotate and export MP4 or GIF. Free and open source — recordings never leave your device.',
+    chips: ['Screen Recorder', 'Webcam Layouts', 'No Upload'],
     date: 'Nov 2026'
   }
 ];
