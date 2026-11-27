@@ -2,7 +2,7 @@
 // To add a new one: copy a block below, paste it at the BOTTOM of the list,
 // and drop its screenshot in assets/projects/.
 //   name        short name on the card
-//   icon        one of: pdf, photo, idcard, resume, captions, clips, fonts, record, avatar, spark (the little app icon)
+//   icon        one of: pdf, photo, idcard, resume, captions, clips, fonts, record, avatar, invoice, spark (the little app icon)
 //   color       app icon colour
 //   categories  any of: Productivity, Education, Design, Careers, Creators, Utilities
 //   chips       2-3 short tags shown on the card
@@ -115,6 +115,18 @@ window.PROJECTS = [
     categories: ['Design', 'Creators'],
     description: 'Turn any selfie into a professional, creative or platform-ready profile picture. Remove the background on your device, pick from 40+ editable templates and export in HD. No signup, no watermark.',
     chips: ['Background Removal', '40+ Templates', 'No Upload'],
+    date: 'Nov 2026'
+  },
+  {
+    title: 'Invoice Mitra – Free GST invoice maker',
+    name: 'Invoice Mitra',
+    url: 'https://nishtek.in/invoice-mitra/',
+    image: 'assets/projects/invoice-mitra.webp',
+    icon: 'invoice',
+    color: '#176b50',
+    categories: ['Productivity', 'Utilities'],
+    description: 'Make GST invoices, quotations and receipts for freelancers, creators and small businesses. 13 templates, UPI QR, payment reminders and one-click PDF download.',
+    chips: ['GST Invoices', 'UPI QR', 'PDF Download'],
     date: 'Nov 2026'
   }
 ];
